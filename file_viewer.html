@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>test vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <style>
+        ol {
+            float: left;
+        }
+
+        img {
+            display: inline-block;
+            width: 740px;
+        }
+
+        div {
+            display: inline-block;
+        }
+
+        button {
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <button v-on:click="rootDir">/</button>
+    {{ message }}:{{currentDir}}
+    <br/>
+    <ol>
+        dirs:
+        <li v-on:click="parentDir"><a>..</a></li>
+        <li v-bind:id="dir" class="dir-item" v-for="dir in dirs" v-on:click="updateDir">
+            {{ dir }}
+        </li>
+    </ol>
+    <ol>
+        files:
+        <li class="file-item" v-for="file in filesView">
+            {{ file }}
+        </li>
+    </ol>
+    <div>
+        <button id="pre" v-on:click="pre"> <</button>
+        <button id="next" v-on:click="next"> ></button>
+        <!--{{img}}-->
+        <img v-for="img in imgsView" v-bind:src="base_url_file + currentDir.slice(2,) + '/' + img" v-bind:alt="img"/>
+    </div>
+</div>
+
+
+<script src="./main.js"></script>
+
+</body>
+</html>
