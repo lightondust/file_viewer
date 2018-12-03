@@ -1,5 +1,5 @@
-base_url_query = 'http://localhost:5042/file/';
-base_url_file = 'http://192.168.11.73/sec/pic/g/'
+base_url_query = 'http://192.168.11.73:8812/file/';
+base_url_file = 'http://192.168.11.73/sec/'
 
 function getParentURL(url) {
     return url.slice(0, url.lastIndexOf('/'));
